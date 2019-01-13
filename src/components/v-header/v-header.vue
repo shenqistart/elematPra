@@ -32,8 +32,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import SupportIco from "../support-ico/support-ico.vue";
-// import SupportIco from "components/supprot-ico/support-ico.vue";
+import SupportIco from "components/support-ico/support-ico";
 export default {
   name: "v-header",
   props: {
