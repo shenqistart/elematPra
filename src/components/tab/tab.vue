@@ -48,6 +48,7 @@ export default {
       slideOptions: {
         listenScroll: true,
         probeType: 3,
+        // 防止斜着滚动
         directionLockThreshold: 0
       }
     };
@@ -71,9 +72,11 @@ export default {
     onScroll(pos) {
       const tabBarWidth = this.$refs.tabBar.$el.clientWidth;
       const slideWidth = this.$refs.slide.slide.scrollerWidth;
+      // 下划线滚动的位置
       const transform = (-pos.x / slideWidth) * tabBarWidth;
       this.$refs.tabBar.setSliderTransform(transform);
     },
+    // 点击切换
     onChange(current) {
       this.index = current;
       const instance = this.$refs.component[current];
@@ -89,6 +92,7 @@ export default {
 @import '~common/stylus/variable';
 
 .tab {
+  // 上面是固定高度的布局，下面是flex=1,从而将其他的内容都分配到
   display: flex;
   flex-direction: column;
   height: 100%;
