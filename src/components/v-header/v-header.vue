@@ -32,7 +32,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-import SupportIco from "../support-icon/support-ico.vue";
+import SupportIco from "../support-ico/support-ico.vue";
 // import SupportIco from "components/supprot-ico/support-ico.vue";
 export default {
   name: "v-header",
@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     showDetail() {
+      // 这么写是为了可以缓存，不用每次都是创建
       this.headerDetailComp =
         this.headerDetailComp ||
         this.$createHeaderDetail({
@@ -53,6 +54,7 @@ export default {
             seller: "seller"
           }
         });
+      // 调用时实例上的方法
       this.headerDetailComp.show();
     }
   },

@@ -1,12 +1,13 @@
 <template>
   <div id="app">
     <v-header :seller="seller"></v-header>
+    <header-detail></header-detail>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue
-import VHeader from "./components/v-header/v-header";
+import VHeader from "components/v-header/v-header";
+import HeaderDetail from "components/header-detail/header-detail";
 import { getSeller } from "api";
 
 export default {
@@ -27,7 +28,8 @@ export default {
     this._getSeller();
   },
   components: {
-    VHeader
+    VHeader,
+    HeaderDetail
   }
 };
 </script>
