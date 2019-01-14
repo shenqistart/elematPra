@@ -38,3 +38,6 @@ star模块的制作，数组的思想
 }
 https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0
 在scoped中修改引入组件的样式
+
+4.2
+tab的滑动和缓动效果

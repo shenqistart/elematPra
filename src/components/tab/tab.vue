@@ -20,6 +20,7 @@
         @change="onChange"
       >
         <cube-slide-item v-for="(tab,index) in tabs" :key="index">
+          <!-- 通过动态组件 -->
           <component ref="component" :is="tab.component" :data="tab.data"></component>
         </cube-slide-item>
       </cube-slide>
@@ -58,6 +59,7 @@ export default {
       get() {
         return this.tabs[this.index].label;
       },
+      // 点击之后可以切换
       set(newVal) {
         this.index = this.tabs.findIndex(value => {
           return value.label === newVal;
