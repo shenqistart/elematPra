@@ -68,6 +68,7 @@ export default {
     }
   },
   mounted() {
+    // 第一次父组件渲染子组件的时候，先渲染一次
     this.onChange(this.index);
   },
   methods: {
@@ -81,6 +82,7 @@ export default {
     // 点击切换
     onChange(current) {
       this.index = current;
+      // 获取到组件的实例，看书否调用组件的fetch方法
       const instance = this.$refs.component[current];
       if (instance && instance.fetch) {
         instance.fetch();

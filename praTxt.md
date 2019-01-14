@@ -41,3 +41,26 @@ https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E5%AD%90%E7%BB%84%E4%BB%B
 
 4.2
 tab的滑动和缓动效果
+
+4.3就是将tab放在了外边app.vue下面
+
+5.1goods组件
+scrollNav:数据边界的问题
+      <cube-scroll-nav
+        :side=true
+        :data="goods"
+        :options="scrollOptions"
+        v-if="goods.length"
+      >
+scrollOptions中的click为false
+goods的数据什么时候渲染？
+在tab组件onChange的时候再去获取数据
+tabonChange方法中获取组件的数据和实例
+
+
+
+
+
+
+
+
