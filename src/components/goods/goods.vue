@@ -24,22 +24,33 @@
                   <span class="now">￥{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
-                <div class="cart-control-wrapper">
-                  <cart-control :food="food"></cart-control>
-                </div>
               </div>
             </li>
           </ul>
         </cube-scroll-nav-panel>
       </cube-scroll-nav>
     </div>
+    <div class="shop-cart-wrapper">
+      <shop-cart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></shop-cart>
+    </div>
   </div>
 </template>
 
 <script>
 import { getGoods } from "api";
+import ShopCart from "components/shop-cart/shop-cart";
+
 // import SupportIco from "components/support-ico/support-ico";
 export default {
+  name: "goods",
+  props: {
+    data: {
+      type: Object,
+      default() {
+        return {};
+      }
+    }
+  },
   data() {
     return {
       goods: [],
@@ -59,6 +70,15 @@ export default {
       });
       // }
     }
+  },
+  computed: {
+    seller() {
+      // 拿到属性里传递的tab的值，因为这个是基于不同的值传递给购物车的
+      return this.data.seller;
+    }
+  },
+  components: {
+    ShopCart
   }
 };
 </script>
