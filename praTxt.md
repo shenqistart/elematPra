@@ -61,6 +61,8 @@ tabonChange方法中获取组件的数据和实例
 注意stylus一定要空格，尤其在import的时候
 
 
+5.3 cartControl
+
 
 
 
