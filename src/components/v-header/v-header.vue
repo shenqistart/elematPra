@@ -157,7 +157,7 @@ export default {
       }
     }
   }
-
+//  多个小图标的处理
   .bulletin-wrapper {
     position: relative;
     display: flex;
